@@ -15,33 +15,33 @@ namespace LibraryManagementSystem.Controllers
     {
         // GET: api/books
         [HttpGet]
-        public IEnumerable<Book> Get()
+        public IEnumerable<Book> GetAllBooks()
         {
             return new Book[] { };
         }
 
         // GET api/books/5
         [HttpGet("{id}")]
-        public Book Get(int id)
+        public Book GetBookById(int id)
         {
             return new Book();
         }
 
         // POST api/books
         [HttpPost]
-        public void Post([FromBody] Book value)
+        public void PostBook([FromBody] Book value)
         {
         }
 
         // PUT api/books/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] Book value)
+        public void PutBook(int id, [FromBody] Book value)
         {
         }
 
         // DELETE api/books/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public void DeleteBook(int id)
         {
         }
     }

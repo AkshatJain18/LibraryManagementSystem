@@ -7,17 +7,11 @@ namespace LibraryManagementSystem.Models.Core
 {
     public class Fine
     {
-        [Key]
         public int Id { get; set; }
-        [Required]
         public int CustomerId { get; set; }
-        [Required]
         public int IssueId { get; set; }
-        [Required]
         public int ReturnId { get; set; }
-        [Required]
         public int OverDueDays { get; set; }
-        [Required]
         public decimal FineAmount { get; set; }
     }
 }
