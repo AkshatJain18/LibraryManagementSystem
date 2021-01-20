@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using LibraryManagementSystem.Models.Core;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,39 +9,46 @@ using System.Threading.Tasks;
 
 namespace LibraryManagementSystem.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/customers")]
     [ApiController]
     public class CustomersController : ControllerBase
     {
-        // GET: api/<CustomersController>
+        // GET: api/customers
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<Customer> GetAllCustomers()
         {
-            return new string[] { "value1", "value2" };
+            return new Customer[] {  };
         }
 
-        // GET api/<CustomersController>/5
+        // GET api/customers/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public Customer GetCustomerById(int id)
         {
-            return "value";
+            return new Customer();
         }
 
-        // POST api/<CustomersController>
+        // GET api/customers/5/outstanding
+        [Route("{id}/outstanding")]
+        public double GetCustomerDueAmount(int id)
+        {
+            return 200;
+        }
+
+        // POST api/customers
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void PostCustomer([FromBody] Customer customer)
         {
         }
 
-        // PUT api/<CustomersController>/5
+        // PUT api/customers/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void PutCustomer(int id, [FromBody] Customer customer)
         {
         }
 
-        // DELETE api/<CustomersController>/5
+        // DELETE api/customers/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public void DeleteCustomer(int id)
         {
         }
     }

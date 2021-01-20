@@ -27,15 +27,22 @@ namespace LibraryManagementSystem.Controllers
             return new Book();
         }
 
+        // GET api/books/filter/popular
+        [Route("filter/popular")]
+        public Book GetPopularBooks()
+        {
+            return new Book();
+        }
+
         // POST api/books
         [HttpPost]
-        public void PostBook([FromBody] Book value)
+        public void PostBook([FromBody] Book book)
         {
         }
 
         // PUT api/books/5
         [HttpPut("{id}")]
-        public void PutBook(int id, [FromBody] Book value)
+        public void PutBook(int id, [FromBody] Book book)
         {
         }
 
