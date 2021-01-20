@@ -34,6 +34,13 @@ namespace LibraryManagementSystem.Controllers
             return 200;
         }
 
+        // GET api/customers/5/membership-end-date
+        [Route("{id}/membership-end-date")]
+        public DateTime GetCustomerMembershipEndDate(int id)
+        {
+            return DateTime.Now;
+        }
+
         // POST api/customers
         [HttpPost]
         public void PostCustomer([FromBody] Customer customer)
